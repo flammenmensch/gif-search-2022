@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@picocss/pico": "^1.5.2",
+    "@sibur/eslint-config": "^1.4.1",
+    "@sibur/prettier-config": "^1.1.0",
+    "@sintez/core": "^0.0.30",
+    "@sintez/react": "^0.0.23",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -26,10 +29,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "prettier": "@sibur/prettier-config",
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "@sibur/eslint-config"
     ]
   },
   "browserslist": {

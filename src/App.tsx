@@ -1,6 +1,14 @@
-import { SearchForm } from './components/SearchForm';
+import {
+  Button,
+  ButtonKind,
+  ButtonSize,
+  Heading,
+  Status,
+  Text,
+} from '@sintez/react';
 import { useSearch } from './application/useSearch';
 import { GifList } from './components/GifList';
+import { SearchForm } from './components/SearchForm';
 
 const App = () => {
   const { load, loading, total, loadingMore, loadMore, hasMore, data, error } =
@@ -11,39 +19,44 @@ const App = () => {
     });
 
   return (
-    <>
+    <div className="app">
       <header>
-        <hgroup>
-          <h1>GIF Search</h1>
-          <h2>Powered by Giphy&reg;</h2>
-        </hgroup>
+        <Heading level={1}>GIF Search</Heading>
+        <sub>
+          <Status>&beta;eta</Status>
+        </sub>
       </header>
       <main>
-        <section>
+        <section className="search-form">
           <SearchForm onSearch={load} />
         </section>
-        <section>
-          {loading && <span aria-busy={true}>Loading...</span>}
+        <section className="search-results">
+          {loading && <Text>Loading...</Text>}
           {error && <mark>Error: {error.message}</mark>}
           {data && (
             <>
-              <p>
+              <Text>
                 Found: <strong>{total}</strong> gifs
-              </p>
+              </Text>
               <GifList items={data} />
             </>
           )}
         </section>
         {hasMore && (
-          <section>
-            <button onClick={loadMore} aria-busy={loadingMore}>
+          <section className="has-more">
+            <Button
+              size={ButtonSize.SMALL}
+              kind={ButtonKind.PLAIN}
+              onClick={loadMore}
+              isLoading={loadingMore}
+            >
               {loadingMore ? 'Loading...' : 'Load more'}
-            </button>
+            </Button>
           </section>
         )}
       </main>
       <footer>&copy; SIBUR, 2022</footer>
-    </>
+    </div>
   );
 };
 

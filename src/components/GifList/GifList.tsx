@@ -5,11 +5,13 @@ interface Props {
 }
 
 const GifList = (props: Props) => (
-  <>
+  <ul className="gif-list">
     {props.items.map((item) => (
-      <img src={item.images.fixed_width.url} alt="gif" key={item.id} />
+      <li key={item.id}>
+        <img src={item.images.fixed_height.url} alt={item.id} />
+      </li>
     ))}
-  </>
+  </ul>
 );
 
 export default GifList;

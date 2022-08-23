@@ -1,1 +1,64 @@
-@import "~@picocss/pico/scss/pico.classless";
+@import "~@sintez/core";
+
+.app {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: var(--stz-core-padding-l);
+}
+
+header {
+  margin-bottom: var(--stz-core-padding-xl);
+  display: flex;
+}
+
+footer {
+  color: var(--stz-core-colors-whitesmoke);
+  margin-top: var(--stz-core-padding-l);
+  font-size: var(--stz-core-font-size-s);
+}
+
+.search-form {
+  margin-bottom: var(--stz-core-padding-l);
+}
+
+.search-results {
+  display: flex;
+  gap: var(--stz-core-padding-m);
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.has-more {
+  display: flex;
+  justify-content: center;
+}
+
+.gif-list {
+  display: grid;
+  column-count: 2;
+  gap: var(--stz-core-padding-m);
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: var(--stz-core-padding-l);
+
+  li {
+    justify-self: start;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    img {
+      display: block;
+      overflow: hidden;
+      box-shadow: var(--stz-core-shadow-s);
+      border-radius: var(--stz-core-radii-m);
+      transition: box-shadow .2s linear;
+
+      &:hover {
+        box-shadow: var(--stz-core-shadow-m);
+      }
+    }
+  }
+}

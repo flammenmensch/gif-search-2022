@@ -23,8 +23,8 @@ export const search = ({
   limit = 10,
   offset = 0,
   rating = 'g',
-}: SearchRequest): Promise<SearchResponse> => {
-  return fetch(
+}: SearchRequest): Promise<SearchResponse> =>
+  fetch(
     `${API_URL}?q=${encodeURIComponent(
       query,
     )}&limit=${limit}&offset=${offset}&rating=${rating}&api_key=${
@@ -34,6 +34,6 @@ export const search = ({
     if (response.status !== 200) {
       throw new Error(response.statusText);
     }
+
     return response.json();
   });
-};

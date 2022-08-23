@@ -1,3 +1,4 @@
+import { Input } from '@sintez/react';
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 
 interface Props {
@@ -28,10 +29,11 @@ const SearchForm = (props: Props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <Input
         ref={inputRef}
         type="text"
-        placeholder="e.g. kittens"
+        label="Search query"
+        hint="e.g. kittens"
         onChange={handleChange}
         value={query}
       />
