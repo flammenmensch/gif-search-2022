@@ -28,10 +28,11 @@ const SearchForm = (props: Props) => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form role="search" onSubmit={handleSubmit}>
       <Input
         ref={inputRef}
         type="text"
+        role="searchbox"
         label="Search query"
         hint="e.g. kittens"
         onChange={handleChange}

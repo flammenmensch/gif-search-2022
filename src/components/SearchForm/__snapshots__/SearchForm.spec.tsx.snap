@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    role="search"
+  >
+    <div
+      class="stz-core-floating-label"
+    >
+      <input
+        id=":r1:"
+        placeholder="Search query"
+        role="searchbox"
+        type="text"
+        value=""
+      />
+      <label
+        for=":r1:"
+      >
+        Search query
+      </label>
+      <small>
+        e.g. kittens
+      </small>
+    </div>
+  </form>
+</DocumentFragment>
+`;
