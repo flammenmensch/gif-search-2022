@@ -1,6 +1,6 @@
 import { GifObject, Rating } from '../domain';
 
-const API_URL = '//api.giphy.com/v1/gifs/search';
+const API_URL = 'http://api.giphy.com/v1/gifs/search';
 
 type SearchRequest = {
   query: string;

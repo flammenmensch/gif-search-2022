@@ -5,9 +5,9 @@ interface Props {
 }
 
 const GifList = (props: Props) => (
-  <ul className="gif-list">
+  <ul className="gif-list" role="list">
     {props.items.map((item) => (
-      <li key={item.id}>
+      <li key={item.id} role="listitem">
         <img src={item.images.fixed_height.url} alt={item.id} />
       </li>
     ))}

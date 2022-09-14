@@ -16,7 +16,7 @@ const SearchForm = (props: Props) => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    if (props.onSearch) {
+    if (props.onSearch && query !== '') {
       props.onSearch(query);
     }
   };
@@ -28,8 +28,9 @@ const SearchForm = (props: Props) => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} role="search">
       <Input
+        role="searchbox"
         ref={inputRef}
         type="text"
         label="Search query"
